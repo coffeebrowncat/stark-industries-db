@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ZCWRQTIQGFkFCTWX6y_D">
+    <mxGraphModel dx="615" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="110" width="110" x="260" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="armoury" vertex="1">
+          <mxGeometry height="30" width="60" x="285" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="&lt;span style=&quot;text-align: left;&quot;&gt;suit_id&lt;/span&gt;&lt;div style=&quot;text-align: left;&quot;&gt;model&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;color&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="260" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-6" edge="1" parent="1" source="OBCf6qSoeuS0jjOfW5MB-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=13;" target="OBCf6qSoeuS0jjOfW5MB-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="130" width="120" x="470" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=13;" value="weapons_bay" vertex="1">
+          <mxGeometry height="30" width="60" x="500" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=13;" value="weapon_id&lt;div&gt;weapon_name&lt;/div&gt;&lt;div&gt;damage&lt;/div&gt;&lt;div&gt;assigned_suit_id&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="60" x="480" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="OBCf6qSoeuS0jjOfW5MB-10" edge="1" parent="1" style="edgeStyle=entityRelationEdgeStyle;fontSize=13;html=1;endArrow=ERzeroToMany;endFill=1;rounded=0;" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="370" y="510" as="sourcePoint" />
+            <mxPoint x="470" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
