@@ -109,7 +109,7 @@ FROM armoury
 JOIN weapons_bay ON armoury.suit_id = weapons_bay.assigned_suit_id 
 WHERE armoury.suit_id = 3;
 
-- - 21. normalization
+-- 21. normalization
 CREATE TABLE weapon_categories(
 category_id INT PRIMARY KEY,
 name VARCHAR(50),
@@ -133,3 +133,34 @@ weapon_categories.name AS category_name,
 weapon_categories.description
 FROM weapons_bay
 JOIN weapon_categories ON weapons_bay.category_id = weapon_categories.category_id;
+
+-- 22. procedure
+CREATE VIEW SuitInventoryView AS
+SELECT 
+    a.model, 
+    w.weapon_name, 
+    w.damage
+FROM armoury a
+JOIN weapons_bay w ON a.suit_id = w.assigned_suit_id;
+
+SELECT * FROM SuitInventoryView WHERE model = 'Mark III';
+
+-- 23. transaction (atomicity example)
+BEGIN TRANSACTION;
+UPDATE weapons_bay SET damage = 150 WHERE weapon_name = 'Repulsor';
+-- if you mess up, you'd run ROLLBACK; instead of COMMIT
+COMMIT;
+
+-- 24. JOIN TYPES
+-- INNER JOIN (the default: only matches where ID exists in both)
+SELECT * FROM armoury a INNER JOIN weapons_bay w ON a.suit_id = w.assigned_suit_id;
+-- LEFT JOIN (keep everything from Armoury, even if it has no weapons)
+SELECT * FROM armoury a LEFT JOIN weapons_bay w ON a.suit_id = w.assigned_suit_id;
+-- CROSS JOIN (every suit paired with every weapon - use with caution!)
+SELECT * FROM armoury CROSS JOIN weapons_bay;
+
+-- 25. sum function
+SELECT 
+    (SELECT SUM(damage) 
+     FROM weapons_bay 
+     WHERE assigned_suit_id = 1) AS total_damage;
