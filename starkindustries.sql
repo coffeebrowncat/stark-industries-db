@@ -86,6 +86,7 @@ JOIN weapons_bay ON armoury.suit_id = weapons_bay.assigned_suit_id
 WHERE armoury.suit_id = 3;
 
 -- 17. joining with multiple conditions // AND
+SELECT *
 FROM armoury 
 JOIN weapons_bay ON armoury.suit_id = weapons_bay.assigned_suit_id 
 WHERE weapons_bay.damage >= 150 AND armoury.color = 'Hot Rod Red';
@@ -107,3 +108,28 @@ SELECT SUM(weapons_bay.damage) AS total_firepower
 FROM armoury 
 JOIN weapons_bay ON armoury.suit_id = weapons_bay.assigned_suit_id 
 WHERE armoury.suit_id = 3;
+
+- - 21. normalization
+CREATE TABLE weapon_categories(
+category_id INT PRIMARY KEY,
+name VARCHAR(50),
+description VARCHAR(255)
+);
+    
+INSERT INTO weapon_categories VALUES (1, 'Energy', 'High-heat discharge'), (2, 'Kinetic', 'Ballistic impact');
+    
+ALTER TABLE weapons_bay ADD COLUMN category_id INT;
+    
+UPDATE weapons_bay
+SET category_id = 1
+WHERE weapon_name = 'Repulsor';
+    
+INSERT INTO weapons_bay (weapon_id, weapon_name, damage, assigned_suit_id, category_id)
+VALUES (101, 'Flamethrower', 50, 1, 2), (102, 'Repulsor', 100, 2, 1);
+    
+SELECT
+weapons_bay.weapon_name,
+weapon_categories.name AS category_name,
+weapon_categories.description
+FROM weapons_bay
+JOIN weapon_categories ON weapons_bay.category_id = weapon_categories.category_id;
